@@ -6,7 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 </head>
+
 <body>
-  
+  <h1>Login Page</h1>
+
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+      {{ form.username }}
+    </div>
+
+    <div>
+      {{ form.password}}
+    </div>
+
+    <div>
+      {{ form.submit }}
+    </div>
+  </form>
+
+  <a href="{{url_for('register')}}">Don't have an account? SIgn Up!</a>
 </body>
 </html>
