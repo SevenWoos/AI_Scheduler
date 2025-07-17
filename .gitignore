@@ -22,5 +22,7 @@ test_inputs.txt
 ignore.py
 
 # Ignore data files
-prompts/scheduler_prompt.txt
-prompts/scheduler_prompt_v2.txt
+prompts/prompt_v4.txt
+prompts/prompt_v5.txt
+prompts/prompt_v6.txt
+prompts/prompt_v7.txt

@@ -29,8 +29,33 @@ def chat():
         """
 
 
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v1.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v2.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v3.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v4.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v5.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'llm_scheduling_prompt_corrected.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'llm_scheduling_prompt_corrected_v2.txt')
+
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
-                                   'prompt_v1.txt')
+                                   'prompt_v6.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v7.txt')
+        
         
         with open(prompt_path, 'r', encoding='utf-8') as f:
             prompt_template = f.read()
