@@ -1,0 +1,17 @@
+### Example 1
+* Tasks:
+  - Take a shower (30 minutes)
+  - Make lunch (15 minutes)
+  - Exercise (2 hours)
+  - Finish homework (10 hours)
+
+* Total Time Available:
+  - 15 hours
+
+* Time When I'm Free:
+  - Monday, Wednesday, Friday: 11:00AM–10:00PM  
+  - Tuesday, Thursday: 8:00PM–10:30PM  
+
+* Schedule Preference
+  - Weekly
+
