@@ -13,11 +13,19 @@ def chat():
         data = request.get_json()
 
         # Fields
-
+        tasks = data.get('tasks', '').strip()
+        time_available = data.get('time_available', '').strip()
+        time_im_free = data.get('time_im_free', '').strip()
+        schedule_preference = data.get('schedule_preference', '').strip()
+        extra_notes = data.get('message', '').strip()
 
         # Prompt Injection
         user_input = f"""
-
+            Tasks: {tasks}
+            Time Available: {time_available}
+            Time I'm Free: {time_im_free}
+            Schedule Preference: {schedule_preference}
+            Extra Notes: {extra_notes}
         """
 
 
@@ -33,7 +41,7 @@ def chat():
 
 
         response = requests.post(
-            'https://localhost:11434/api/generate', 
+            'http://localhost:11434/api/generate', 
             json={
                 "model": "llama3", 
                 "prompt": full_prompt, 

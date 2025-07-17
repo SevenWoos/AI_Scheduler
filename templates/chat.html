@@ -5,8 +5,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
 </head>
+
 <body>
+  <h1>Greetings {{ user.username }}! I am your personal AI assistant.</h1>
+
+  <form id="chat-form" method="post">
+    <label for="tasks">Tasks to Do</label><br>
+    <textarea id="tasks" name="tasks" rows="2" required
+    placeholder="Enter tasks with durations, e.g. Take a shower (30 minutes), make lunch (15 minutes)"></textarea><br><br>
   
+    <label for="time_available">Total Time Available This Week (e.g., 26 hours):</label><br>
+    <input type="text" id="time_available" name="time_available" required><br><br>
+  
+    <label for="time_im_free">Time Where I'm Free Each Day (e.g., 8PM-10PM on M/W/F, 10AM-12AM on Sat/Sun):</label><br>
+    <textarea id="time_im_free" name="time_im_free" rows="3" required></textarea><br><br>
+  
+    <label for="schedule_preference">Schedule Preference (e.g., Weekly, or list days):</label><br>
+    <input type="text" id="schedule_preference" name="schedule_preference" required><br><br>
+  
+    <label for="message">Extra Notes (Optional):</label><br>
+    <textarea id="message" name="message" rows="2"></textarea><br><br>
+  
+    <button type="submit">Generate Schedule</button>
+  </form>
+
+  <div id="chat-box"></div>
+  
+
+  <a href="{{ url_for('dashboard') }}">Return to dashboard</a>
+  <a href="{{ url_for('logout') }}">Press here to logout!</a>
+
+  <script>
+    const chatBox = document.getElementById('chat-box');
+    const form = document.getElementById('chat-form');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Uses FormData to grab all inputs.
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+  
+      chatBox.innerHTML += `<p><strong>You:</strong><br>
+        Tasks: ${data.tasks}<br>
+        Time Available: ${data.time_available}<br>
+        Time I'm Free: ${data.time_im_free.replace(/\n/g, '<br>')}<br>
+        Schedule Preference: ${data.schedule_preference}<br>
+        ${data.message ? 'Extra: ' + data.message.replace(/\n/g, '<br>') : ''}
+      </p>`;
+  
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+  
+      const result = await response.json();
+      const formattedResponse = result.response.replace(/\n/g, '<br>');
+  
+      // Converts multi-line text (\n) into HTML line breaks <br> for both user and AI responses
+      chatBox.innerHTML += `<p><strong>AI:</strong><br>${formattedResponse}</p>`;
+    });
+  </script>
 </body>
 </html>
