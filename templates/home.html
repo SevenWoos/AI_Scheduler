@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
   <h1>AI Scheduler</h1>
 
   <a class="btn login_btn" href="{{url_for('login')}}">Login</a>
-  <a class="btn register_btn" href="{{url_for('register')}}">Login</a>
+  <a class="btn register_btn" href="{{url_for('register')}}">Register</a>
 </body>
 </html>
