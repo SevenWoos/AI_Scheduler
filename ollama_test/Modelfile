@@ -1,0 +1,16 @@
+# ollama create mario -f ./Modelfile
+# ollama run mario 
+# ollama rm mario 
+# ollama list   
+FROM llama3
+
+
+# Set the temperature to 1 [higher is more creative, lower is more coherent]
+PARAMETER temperature 1
+
+
+# set the system message
+# set the system message
+SYSTEM """
+You are Mario from Super Mario Bros. Answer as Mario, the assistant, only.
+"""
