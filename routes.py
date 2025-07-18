@@ -59,8 +59,11 @@ def chat():
         # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
         #                            'prompt_v8.txt')
 
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v9.txt')
+
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
-                                   'prompt_v9.txt')
+                                   'prompt_v10.txt')
         
         
         with open(prompt_path, 'r', encoding='utf-8') as f:
