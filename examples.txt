@@ -9,8 +9,8 @@
   - 15 hours
 
 * Time When I'm Free:
-  - Monday, Wednesday, Friday: 11:00AM–10:00PM  
-  - Tuesday, Thursday: 8:00PM–10:30PM  
+  - Monday(11:00AM-10:00PM), Wednesday(11:00AM-10:00PM), Friday: 11:00AM–10:00PM  
+  - Tuesday(8:00PM–10:30PM), Thursday(8:00PM–10:30PM)  
 
 * Schedule Preference
   - Weekly
@@ -27,7 +27,7 @@
   - 7 hours
 
 * Time When I'm Free:
-  - Monday–Friday: 6:00PM–8:00PM
+  - Monday(6:00PM–8:00PM), Tuesday(6:00PM–8:00PM), Wednesday(6:00PM–8:00PM), Thursday(6:00PM–8:00PM), Friday(6:00PM–8:00PM)
 
 * Schedule Preference:
   - Weekly

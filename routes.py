@@ -77,7 +77,12 @@ def chat():
                 # "model": "llama3", 
                 "model": "deepseek", 
                 "prompt": full_prompt, 
-                "stream": False
+                "stream": False, 
+                "num_predict": 512, # Limits how many tokens DeepSeek can generate
+                "temperature": 0.3, # Speeds up generation by reducing randomness
+                "top_p": 0.9,  # Helps control the diversity of output
+                "stop": ["</s>"] # Optional: Helps cut off long responses early
+
             }
         )
 
