@@ -62,8 +62,11 @@ def chat():
         # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
         #                            'prompt_v9.txt')
 
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v10.txt')
+
         prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
-                                   'prompt_v10.txt')
+                                   'prompt_v11.txt')
         
         
         with open(prompt_path, 'r', encoding='utf-8') as f:
@@ -74,20 +77,38 @@ def chat():
         full_prompt = prompt_template.replace('{{USER_INPUT_HERE}}', user_input)
 
 
+        # response = requests.post(
+        #     'http://localhost:11434/api/generate', 
+        #     json={
+        #         "model": "llama3", 
+        #         "prompt": full_prompt, 
+        #         "stream": False, 
+        #     }
+        # )
+
         response = requests.post(
             'http://localhost:11434/api/generate', 
             json={
-                # "model": "llama3", 
-                "model": "deepseek", 
+                "model": "phi3:mini", 
                 "prompt": full_prompt, 
                 "stream": False, 
-                "num_predict": 512, # Limits how many tokens DeepSeek can generate
-                "temperature": 0.3, # Speeds up generation by reducing randomness
-                "top_p": 0.9,  # Helps control the diversity of output
-                "stop": ["</s>"] # Optional: Helps cut off long responses early
-
+                "num_predict": 300
             }
         )
+
+        # response = requests.post(
+        #     'http://localhost:11434/api/generate', 
+        #     json={
+        #         "model": "deepseek", 
+        #         "prompt": full_prompt, 
+        #         "stream": False, 
+        #         "num_predict": 512, # Limits how many tokens DeepSeek can generate
+        #         "temperature": 0.3, # Speeds up generation by reducing randomness
+        #         "top_p": 0.9,  # Helps control the diversity of output
+        #         "stop": ["</s>"] # Optional: Helps cut off long responses early
+
+        #     }
+        # )
 
         data = response.json()
         return jsonify({"response": data.get("response", "")})
