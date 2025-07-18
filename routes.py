@@ -50,11 +50,17 @@ def chat():
         # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
         #                            'llm_scheduling_prompt_corrected_v2.txt')
 
-        prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
-                                   'prompt_v6.txt')
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v6.txt')
 
         # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
         #                            'prompt_v7.txt')
+
+        # prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+        #                            'prompt_v8.txt')
+
+        prompt_path = os.path.join(os.path.dirname(__file__), 'prompts', 
+                                   'prompt_v9.txt')
         
         
         with open(prompt_path, 'r', encoding='utf-8') as f:
@@ -68,7 +74,8 @@ def chat():
         response = requests.post(
             'http://localhost:11434/api/generate', 
             json={
-                "model": "llama3", 
+                # "model": "llama3", 
+                "model": "deepseek", 
                 "prompt": full_prompt, 
                 "stream": False
             }

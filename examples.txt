@@ -15,3 +15,20 @@
 * Schedule Preference
   - Weekly
 
+
+
+### Example 2
+* Tasks:
+  - Read a book (2 hours)
+  - Study math (4 hours)
+  - Walk the dog (1 hour)
+
+* Total Time Available:
+  - 7 hours
+
+* Time When I'm Free:
+  - Monday–Friday: 6:00PM–8:00PM
+
+* Schedule Preference:
+  - Weekly
+
