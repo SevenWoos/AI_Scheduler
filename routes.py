@@ -77,24 +77,33 @@ def chat():
         full_prompt = prompt_template.replace('{{USER_INPUT_HERE}}', user_input)
 
 
+        response = requests.post(
+            'http://localhost:11434/api/generate', 
+            json={
+                "model": "llama3", 
+                "prompt": full_prompt, 
+                "stream": False, 
+            }
+        )
+
         # response = requests.post(
         #     'http://localhost:11434/api/generate', 
         #     json={
-        #         "model": "llama3", 
+        #         "model": "llama4", 
         #         "prompt": full_prompt, 
         #         "stream": False, 
         #     }
         # )
 
-        response = requests.post(
-            'http://localhost:11434/api/generate', 
-            json={
-                "model": "phi3:mini", 
-                "prompt": full_prompt, 
-                "stream": False, 
-                "num_predict": 300
-            }
-        )
+        # response = requests.post(
+        #     'http://localhost:11434/api/generate', 
+        #     json={
+        #         "model": "phi3:mini", 
+        #         "prompt": full_prompt, 
+        #         "stream": False, 
+        #         "num_predict": 300
+        #     }
+        # )
 
         # response = requests.post(
         #     'http://localhost:11434/api/generate', 
