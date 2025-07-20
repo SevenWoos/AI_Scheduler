@@ -32,3 +32,19 @@
 * Schedule Preference:
   - Weekly
 
+
+
+### Example 3
+* Tasks:
+  - Play GTA 5 (5 hours)
+  - Play Animal Crossing: New Horizons (3 hours)
+  - Play Pokemon Red (8 hours)
+
+* Total Time Available:
+  - 16 hours
+
+* Time When I'm Free:
+  - Monday(8:00PM–11:00PM), Tuesday(8:00PM–11:00PM), Wednesday(8:00PM–11:00PM), Friday(7:00PM–12:00AM), Saturday (12:00PM-11:00PM)
+
+* Schedule Preference:
+  - Weekly
